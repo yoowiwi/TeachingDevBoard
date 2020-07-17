@@ -1,0 +1,5 @@
+MDK-ARM/Listings
+MDK-ARM/Objects
+MDK-ARM/DebugConfig
+*.uvoptx
+*.uvguix*
