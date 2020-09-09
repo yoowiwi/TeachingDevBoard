@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\Libraries\CMSIS\CM3\CoreSupport;..\User\App;..\User\Drives;..\User\Main</IncludePath>
+              <IncludePath>..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\Libraries\CMSIS\CM3\CoreSupport;..\User\App;..\User\Drives;..\User\Main;..\User\Drives\LED;..\User\Drives\KEY;..\User\Drives\NVIC;..\User\Drives\USART</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -574,6 +574,31 @@
         </Group>
         <Group>
           <GroupName>User/Drives</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drives\LED\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drives\KEY\bsp_key.c</FilePath>
+            </File>
+            <File>
+              <FileName>nvic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drives\NVIC\nvic.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drives\USART\bsp_usart.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>::RTOS</GroupName>
         </Group>
       </Groups>
     </Target>
@@ -581,8 +606,38 @@
 
   <RTE>
     <apis/>
-    <components/>
-    <files/>
+    <components>
+      <component Cbundle="RT-Thread" Cclass="RTOS" Cgroup="kernel" Cvendor="RealThread" Cversion="3.1.3" condition="CMSIS Core with RTOS">
+        <package license="License.txt" name="RT-Thread" schemaVersion="1.4" supportContact="https://www.rt-thread.org" url="https://www.rt-thread.org/download/mdk/" vendor="RealThread" version="3.1.3"/>
+        <targetInfos>
+          <targetInfo name="TDB"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="RT-Thread" Cclass="RTOS" Cgroup="shell" Cvendor="RealThread" Cversion="3.1.3" condition="shell">
+        <package license="License.txt" name="RT-Thread" schemaVersion="1.4" supportContact="https://www.rt-thread.org" url="https://www.rt-thread.org/download/mdk/" vendor="RealThread" version="3.1.3"/>
+        <targetInfos>
+          <targetInfo name="TDB"/>
+        </targetInfos>
+      </component>
+    </components>
+    <files>
+      <file attr="config" category="source" name="bsp\board.c" version="3.1.3">
+        <instance index="0">RTE\RTOS\board.c</instance>
+        <component Cbundle="RT-Thread" Cclass="RTOS" Cgroup="kernel" Cvendor="RealThread" Cversion="3.1.3" condition="CMSIS Core with RTOS"/>
+        <package license="License.txt" name="RT-Thread" schemaVersion="1.4" supportContact="https://www.rt-thread.org" url="https://www.rt-thread.org/download/mdk/" vendor="RealThread" version="3.1.3"/>
+        <targetInfos>
+          <targetInfo name="TDB"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="bsp\rtconfig.h" version="3.1.3">
+        <instance index="0">RTE\RTOS\rtconfig.h</instance>
+        <component Cbundle="RT-Thread" Cclass="RTOS" Cgroup="kernel" Cvendor="RealThread" Cversion="3.1.3" condition="CMSIS Core with RTOS"/>
+        <package license="License.txt" name="RT-Thread" schemaVersion="1.4" supportContact="https://www.rt-thread.org" url="https://www.rt-thread.org/download/mdk/" vendor="RealThread" version="3.1.3"/>
+        <targetInfos>
+          <targetInfo name="TDB"/>
+        </targetInfos>
+      </file>
+    </files>
   </RTE>
 
 </Project>
