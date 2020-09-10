@@ -5,8 +5,9 @@
 
 #define		USART_CONSOLE		USART1
 
-#define		RCC_ENABLE()		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE); \
-													RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1,ENABLE);
+#define		RCC_USART1_ENABLE()	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE); \
+															RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1,ENABLE);
+															
 #define		USART1_GPIO			GPIOA
 #define		USART1_TX_Pin		GPIO_Pin_9
 #define		USART1_RX_Pin		GPIO_Pin_10

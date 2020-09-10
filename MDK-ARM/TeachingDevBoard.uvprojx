@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\Libraries\CMSIS\CM3\CoreSupport;..\User\App;..\User\Drives;..\User\Main;..\User\Drives\LED;..\User\Drives\KEY;..\User\Drives\NVIC;..\User\Drives\USART</IncludePath>
+              <IncludePath>..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\Libraries\CMSIS\CM3\CoreSupport;..\User\App;..\User\Drives;..\User\Main;..\User\Drives\LED;..\User\Drives\KEY;..\User\Drives\NVIC;..\User\Drives\USART;..\User\Drives\OLED</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -576,6 +576,11 @@
           <GroupName>User/Drives</GroupName>
           <Files>
             <File>
+              <FileName>nvic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drives\NVIC\nvic.c</FilePath>
+            </File>
+            <File>
               <FileName>bsp_led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Drives\LED\bsp_led.c</FilePath>
@@ -591,9 +596,9 @@
               <FilePath>..\User\Drives\USART\bsp_usart.c</FilePath>
             </File>
             <File>
-              <FileName>nvic.c</FileName>
+              <FileName>bsp_oled.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Drives\NVIC\nvic.c</FilePath>
+              <FilePath>..\User\Drives\OLED\bsp_oled.c</FilePath>
             </File>
           </Files>
         </Group>

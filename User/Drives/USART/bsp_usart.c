@@ -38,7 +38,7 @@ void rt_hw_console_output(const char *str)
 
 void USART1_InitConfig(uint32_t baud)
 {
-	RCC_ENABLE();
+	RCC_USART1_ENABLE();
 	
 	GPIO_InitTypeDef gpio;
 	gpio.GPIO_Pin = USART1_TX_Pin;
